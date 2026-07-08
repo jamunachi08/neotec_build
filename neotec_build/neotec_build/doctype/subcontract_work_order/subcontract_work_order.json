@@ -1,0 +1,284 @@
+{
+ "autoname": "naming_series:",
+ "creation": "2026-07-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "wo_title",
+  "supplier",
+  "project",
+  "boq",
+  "col_brk_1",
+  "company",
+  "wo_date",
+  "expected_start_date",
+  "expected_end_date",
+  "status",
+  "sec_items",
+  "items",
+  "sec_commercial",
+  "total_amount",
+  "retention_percent",
+  "col_brk_2",
+  "advance_amount",
+  "advance_recovery_percent",
+  "advance_recovered",
+  "sec_billing",
+  "total_billed_amount",
+  "col_brk_3",
+  "total_retention_held",
+  "sec_terms",
+  "pay_when_paid",
+  "terms",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "NB-SWO-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "NB-SWO-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "wo_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Work Order Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Subcontractor (Supplier)",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1
+  },
+  {
+   "fieldname": "boq",
+   "fieldtype": "Link",
+   "label": "BOQ",
+   "options": "BOQ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_brk_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "default": ":Company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "wo_date",
+   "fieldtype": "Date",
+   "label": "WO Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_start_date",
+   "fieldtype": "Date",
+   "label": "Expected Start"
+  },
+  {
+   "fieldname": "expected_end_date",
+   "fieldtype": "Date",
+   "label": "Expected End"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Draft\nIn Progress\nCompleted\nClosed\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_items",
+   "fieldtype": "Section Break",
+   "label": "Scope of Work (from BOQ)"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Subcontract Work Order Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_commercial",
+   "fieldtype": "Section Break",
+   "label": "Commercial Terms"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "WO Value",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "retention_percent",
+   "fieldtype": "Percent",
+   "label": "Retention %"
+  },
+  {
+   "fieldname": "col_brk_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "advance_amount",
+   "fieldtype": "Currency",
+   "label": "Mobilization Advance",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "description": "Percentage of each RA Bill gross applied to recover the advance",
+   "fieldname": "advance_recovery_percent",
+   "fieldtype": "Percent",
+   "label": "Advance Recovery % per RA Bill"
+  },
+  {
+   "fieldname": "advance_recovered",
+   "fieldtype": "Currency",
+   "label": "Advance Recovered (Cumulative)",
+   "no_copy": 1,
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_billing",
+   "fieldtype": "Section Break",
+   "label": "Billing Status"
+  },
+  {
+   "fieldname": "total_billed_amount",
+   "fieldtype": "Currency",
+   "label": "Total Billed (Gross, Cumulative)",
+   "no_copy": 1,
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_brk_3",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "total_retention_held",
+   "fieldtype": "Currency",
+   "label": "Retention Held (Cumulative)",
+   "no_copy": 1,
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_terms",
+   "fieldtype": "Section Break",
+   "label": "Terms & Conditions"
+  },
+  {
+   "fieldname": "pay_when_paid",
+   "fieldtype": "Check",
+   "label": "Back-to-Back (Pay-when-Paid) Terms"
+  },
+  {
+   "fieldname": "terms",
+   "fieldtype": "Text Editor",
+   "label": "Terms"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Subcontract Work Order",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-07-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neotec Build",
+ "name": "Subcontract Work Order",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NeoBuild Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NeoBuild User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "supplier,project,wo_title",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "wo_title"
+}

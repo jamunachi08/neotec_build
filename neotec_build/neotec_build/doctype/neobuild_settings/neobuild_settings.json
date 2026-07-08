@@ -1,0 +1,120 @@
+{
+ "creation": "2026-07-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sec_defaults",
+  "default_retention_percent",
+  "max_retention_percent",
+  "col_brk_1",
+  "default_advance_recovery_percent",
+  "sec_automation",
+  "auto_create_purchase_invoice",
+  "auto_create_retention_je",
+  "col_brk_2",
+  "auto_create_sales_invoice",
+  "sec_accounts",
+  "company_defaults"
+ ],
+ "fields": [
+  {
+   "fieldname": "sec_defaults",
+   "fieldtype": "Section Break",
+   "label": "Billing Defaults"
+  },
+  {
+   "default": "10",
+   "fieldname": "default_retention_percent",
+   "fieldtype": "Percent",
+   "label": "Default Retention %"
+  },
+  {
+   "default": "10",
+   "fieldname": "max_retention_percent",
+   "fieldtype": "Percent",
+   "label": "Maximum Retention %"
+  },
+  {
+   "fieldname": "col_brk_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "default": "10",
+   "fieldname": "default_advance_recovery_percent",
+   "fieldtype": "Percent",
+   "label": "Default Advance Recovery %"
+  },
+  {
+   "fieldname": "sec_automation",
+   "fieldtype": "Section Break",
+   "label": "Automation"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_create_purchase_invoice",
+   "fieldtype": "Check",
+   "label": "Create Draft Purchase Invoice on RA Bill Submit"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_create_retention_je",
+   "fieldtype": "Check",
+   "label": "Create Draft Retention Journal Entry on RA Bill Submit"
+  },
+  {
+   "fieldname": "col_brk_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_create_sales_invoice",
+   "fieldtype": "Check",
+   "label": "Create Draft Sales Invoice on IPC Submit"
+  },
+  {
+   "fieldname": "sec_accounts",
+   "fieldtype": "Section Break",
+   "label": "Company Accounts & Items"
+  },
+  {
+   "fieldname": "company_defaults",
+   "fieldtype": "Table",
+   "label": "Company Defaults",
+   "options": "NeoBuild Company Defaults"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-07-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neotec Build",
+ "name": "NeoBuild Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "NeoBuild Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,257 @@
+{
+ "autoname": "naming_series:",
+ "creation": "2026-07-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "boq",
+  "ipc_number",
+  "customer",
+  "col_brk_1",
+  "project",
+  "company",
+  "measurement_date",
+  "status",
+  "sec_items",
+  "items",
+  "sec_amounts",
+  "gross_amount",
+  "retention_percent",
+  "retention_amount",
+  "col_brk_2",
+  "advance_recovery_amount",
+  "other_deductions",
+  "net_certified",
+  "sec_links",
+  "sales_invoice",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "NB-IPC-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "NB-IPC-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "boq",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "BOQ",
+   "options": "BOQ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ipc_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "IPC No.",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "boq.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_brk_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fetch_from": "boq.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "boq.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "measurement_date",
+   "fieldtype": "Date",
+   "label": "Measurement Date",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Draft\nSubmitted\nInvoiced\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_items",
+   "fieldtype": "Section Break",
+   "label": "Measured Work"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "IPC Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_amounts",
+   "fieldtype": "Section Break",
+   "label": "Certificate Summary"
+  },
+  {
+   "fieldname": "gross_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Gross (This IPC)",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "retention_percent",
+   "fieldtype": "Percent",
+   "label": "Client Retention %"
+  },
+  {
+   "fieldname": "retention_amount",
+   "fieldtype": "Currency",
+   "label": "Retention Withheld (This IPC)",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_brk_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "advance_recovery_amount",
+   "fieldtype": "Currency",
+   "label": "Advance Recovery (This IPC)",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "other_deductions",
+   "fieldtype": "Currency",
+   "label": "Other Deductions",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "bold": 1,
+   "fieldname": "net_certified",
+   "fieldtype": "Currency",
+   "label": "Net Certified (This IPC)",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_links",
+   "fieldtype": "Section Break",
+   "label": "References"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "no_copy": 1,
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Interim Payment Certificate",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-07-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neotec Build",
+ "name": "Interim Payment Certificate",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NeoBuild Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NeoBuild User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "customer,project,boq",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

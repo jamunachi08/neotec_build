@@ -1,0 +1,113 @@
+{
+ "creation": "2026-07-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "boq_item_row",
+  "item_code",
+  "description",
+  "uom",
+  "boq_qty",
+  "prev_cumulative_qty",
+  "cumulative_qty",
+  "current_qty",
+  "rate",
+  "amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "boq_item_row",
+   "fieldtype": "Data",
+   "label": "BOQ Item Ref",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Code"
+  },
+  {
+   "columns": 2,
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Description",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "boq_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "BOQ Qty",
+   "precision": "4",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "prev_cumulative_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Prev. Cumulative",
+   "precision": "4",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "cumulative_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Cumulative Qty (Measured)",
+   "precision": "4"
+  },
+  {
+   "columns": 1,
+   "fieldname": "current_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "This IPC Qty",
+   "precision": "4",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "This IPC Amount",
+   "options": "currency",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neotec Build",
+ "name": "IPC Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

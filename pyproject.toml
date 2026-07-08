@@ -1,0 +1,17 @@
+[project]
+name = "neotec_build"
+authors = [
+    { name = "Neotec Integrated Solution", email = "support@neotec.ai" }
+]
+description = "NeoBuild — Construction contracting suite for KSA: BOQ, subcontract work orders, RA/progress billing, IPCs, retention and advance management on Frappe/ERPNext v15."
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0,<16.0.0"
+erpnext = ">=15.0.0,<16.0.0"

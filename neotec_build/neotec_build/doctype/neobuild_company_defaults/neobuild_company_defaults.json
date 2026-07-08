@@ -1,0 +1,84 @@
+{
+ "creation": "2026-07-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "retention_payable_account",
+  "retention_receivable_account",
+  "advance_account",
+  "subcontract_expense_account",
+  "subcontract_item",
+  "contract_income_item"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "description": "Liability account for retention withheld from subcontractors",
+   "fieldname": "retention_payable_account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Retention Payable Account",
+   "options": "Account"
+  },
+  {
+   "columns": 2,
+   "description": "Asset account for retention withheld by clients",
+   "fieldname": "retention_receivable_account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Retention Receivable Account",
+   "options": "Account"
+  },
+  {
+   "columns": 2,
+   "fieldname": "advance_account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Subcontractor Advance Account",
+   "options": "Account"
+  },
+  {
+   "columns": 2,
+   "fieldname": "subcontract_expense_account",
+   "fieldtype": "Link",
+   "label": "Subcontract Expense Account",
+   "options": "Account"
+  },
+  {
+   "description": "Non-stock service item used on Purchase/Sales Invoices",
+   "fieldname": "subcontract_item",
+   "fieldtype": "Link",
+   "label": "Subcontract Service Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "contract_income_item",
+   "fieldtype": "Link",
+   "label": "Contract Revenue Item",
+   "options": "Item"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neotec Build",
+ "name": "NeoBuild Company Defaults",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

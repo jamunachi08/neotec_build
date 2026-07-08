@@ -1,0 +1,282 @@
+{
+ "autoname": "naming_series:",
+ "creation": "2026-07-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "work_order",
+  "ra_number",
+  "supplier",
+  "col_brk_1",
+  "project",
+  "company",
+  "measurement_date",
+  "status",
+  "sec_items",
+  "items",
+  "sec_amounts",
+  "gross_amount",
+  "retention_percent",
+  "retention_amount",
+  "col_brk_2",
+  "advance_recovery_amount",
+  "other_deductions",
+  "deduction_remarks",
+  "net_payable",
+  "sec_links",
+  "purchase_invoice",
+  "col_brk_3",
+  "retention_journal_entry",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "NB-RA-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Series",
+   "options": "NB-RA-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "work_order",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Subcontract Work Order",
+   "options": "Subcontract Work Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ra_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "RA Bill No.",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "work_order.supplier",
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Subcontractor",
+   "options": "Supplier",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_brk_1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fetch_from": "work_order.project",
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Project",
+   "options": "Project",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "work_order.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "measurement_date",
+   "fieldtype": "Date",
+   "label": "Measurement Date",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Draft\nSubmitted\nInvoiced\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_items",
+   "fieldtype": "Section Break",
+   "label": "Measured Work"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "RA Bill Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_amounts",
+   "fieldtype": "Section Break",
+   "label": "Bill Summary"
+  },
+  {
+   "fieldname": "gross_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Gross (This Bill)",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "work_order.retention_percent",
+   "fieldname": "retention_percent",
+   "fieldtype": "Percent",
+   "label": "Retention %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "retention_amount",
+   "fieldtype": "Currency",
+   "label": "Retention (This Bill)",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_brk_2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "advance_recovery_amount",
+   "fieldtype": "Currency",
+   "label": "Advance Recovery (This Bill)",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_deductions",
+   "fieldtype": "Currency",
+   "label": "Other Deductions",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "depends_on": "other_deductions",
+   "fieldname": "deduction_remarks",
+   "fieldtype": "Small Text",
+   "label": "Deduction Remarks"
+  },
+  {
+   "bold": 1,
+   "fieldname": "net_payable",
+   "fieldtype": "Currency",
+   "label": "Net Payable (This Bill)",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_links",
+   "fieldtype": "Section Break",
+   "label": "References"
+  },
+  {
+   "fieldname": "purchase_invoice",
+   "fieldtype": "Link",
+   "label": "Purchase Invoice",
+   "no_copy": 1,
+   "options": "Purchase Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_brk_3",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "retention_journal_entry",
+   "fieldtype": "Link",
+   "label": "Retention Journal Entry",
+   "no_copy": 1,
+   "options": "Journal Entry",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "RA Bill",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-07-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Neotec Build",
+ "name": "RA Bill",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NeoBuild Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "NeoBuild User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "supplier,project,work_order",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}
